@@ -1,0 +1,21 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.3",
+    "hapi": "^16.6.2",
+    "hapi-plugin-pg": "^1.1.2",
+    "inert": "^4.2.1",
+    "joi": "^14.3.1",
+    "path": "^0.12.7",
+    "pg": "^7.18.2",
+    "vision": "^4.0.0"
+  }
+}

@@ -1,0 +1,127 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Add Project</h2>
+  </div>
+  <div class="card-body">
+    <form method="POST" action="/api/projects">
+      <div class="form-group row">
+        <label for="exampleInputName" class="col-sm-2 col-form-label"
+          >Name</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="nameHelp"
+            placeholder="Enter Name"
+            name="name"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="exampleFormControlTextarea" class="col-sm-2 col-form-label"
+          >Body</label
+        >
+        <div class="col-sm-10">
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea"
+            rows="3"
+            name="body"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="user_data" class="col-sm-2 col-form-label">User</label>
+        <div class="col-sm-10">
+          <select id="user_data" name="user_id" class="form-control">
+            {{#each projects.user_data}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="exampleFormControlTextarea" class="col-sm-2 col-form-label"
+          >Status</label
+        >
+        <div class="col-sm-10">
+          <select id="cars" name="status" class="form-control">
+            <option value="Active">Active</option>
+            <option value="InActive">InActive</option>
+            <option value="Declined">Declined</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <input
+            type="submit"
+            class="btn btn-success btn-block"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<br />
+
+<div class="card">
+  <div class="card-header">
+    <form method="GET" action="/api/projects">
+      <div class="row">
+        <h2 class="col-sm-6">Project Data</h2>
+
+        <div class="col-sm-4">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="textHelp"
+            placeholder="Search by name"
+            name="name"
+          />
+        </div>
+        <div class="col-sm-2">
+          <input
+            type="submit"
+            class="form-control btn btn-success"
+            aria-describedby="textHelp"
+            placeholder="Search"
+            value="Search"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Project Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Body</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each projects.project_data}}
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{name}}</td>
+        <td>{{body}}</td>
+        <td>{{status}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,116 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Add User</h2>
+  </div>
+  <div class="card-body">
+    <form method="POST" action="/api/users">
+      <div class="form-group row">
+        <label for="exampleInputEmail" class="col-sm-2 col-form-label"
+          >Email address</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            name="email"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputName" class="col-sm-2 col-form-label"
+          >Name</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="textHelp"
+            placeholder="Enter name"
+            name="name"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputSurname" class="col-sm-2 col-form-label"
+          >Surname</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputSurname"
+            aria-describedby="textHelp"
+            placeholder="Enter Surnname"
+            name="surname"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <input
+            type="submit"
+            class="btn btn-success btn-block"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br />
+
+<div class="card">
+  <div class="card-header">
+    <form method="GET" action="/api/users">
+      <div class="row">
+        <h2 class="col-sm-6">Users Data</h2>
+
+        <div class="col-sm-4">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="textHelp"
+            placeholder="Search by name"
+            name="name"
+          />
+        </div>
+        <div class="col-sm-2">
+          <input
+            type="submit"
+            class="form-control btn btn-success"
+            aria-describedby="textHelp"
+            placeholder="Search"
+            value="Search"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{email}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
